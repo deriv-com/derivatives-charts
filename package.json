@@ -120,7 +120,7 @@
         "nyc": "^15.1.0",
         "path": "^0.12.7",
         "po-loader": "^0.7.0",
-        "po2json": "^1.0.0-alpha",
+        "po2json": "^1.0.0-beta",
         "postcss": "^8.4.38",
         "postcss-import": "^15.1.0",
         "postcss-inline-svg": "^6.0.0",
