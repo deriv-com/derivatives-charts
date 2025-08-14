@@ -99,7 +99,7 @@ jobs:
                   npm run bootstrap:dev
 
             - name: Create Pull Request to derivatives-trader
-              uses: peter-evans/create-pull-request@76c6f5c20e2111bfee3cd30fae52a25e410f5efc
+              uses: peter-evans/create-pull-request@73d02015430fb50f4c35541e7db0efb838ebd0d4
               with:
                   token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
                   commit-message: 'chore: update @deriv-com/derivatives-charts to ${{ steps.check_new_version.outputs.new_version }}'
