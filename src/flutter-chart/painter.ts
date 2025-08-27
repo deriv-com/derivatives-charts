@@ -2,24 +2,21 @@
 // in the ../flutter-chart/lib/src/deriv_chart/chart/basic_chart.dart file which is the correct way to fix this.
 
 type TPainterCallback = (currentTickPercent: number) => void;
-// [AI]
+
 type TPainterCallbackEntry = {
     callback: TPainterCallback;
     useSmoothAnimation: boolean;
 };
-// [AI]
 export default class Painter {
     callbacks: TPainterCallbackEntry[] = [];
 
     onPaint = (currentTickPercent: number) => {
         this.callbacks.forEach(entry => {
-            // [AI]
             if (entry.useSmoothAnimation) {
                 entry.callback(0);
             } else {
                 entry.callback(currentTickPercent);
             }
-            // [AI]
         });
     };
 
