@@ -84,7 +84,7 @@ export default class PriceLineStore {
             }
         );
 
-        this.mainStore.chartAdapter.painter.registerCallback(this.drawBarrier);
+        this.mainStore.chartAdapter.painter.registerCallback(this.drawBarrier, true);
     };
 
     drawBarrier(currentTickPercent: number) {
@@ -119,7 +119,7 @@ export default class PriceLineStore {
         if (this._line && subholder) {
             makeElementDraggable(this._line, subholder, {
                 onDragStart: (e: MouseEvent) => exitIfNotisDraggable(e, this._startDrag),
-                onDrag: (e: MouseEvent) => exitIfNotisDraggable(e, e => this._dragLine(e, subholder)),
+                onDrag: (e: MouseEvent) => exitIfNotisDraggable(e, e1 => this._dragLine(e1, subholder)),
                 onDragReleased: (e: MouseEvent) => exitIfNotisDraggable(e, this._endDrag),
             });
         }
@@ -157,7 +157,7 @@ export default class PriceLineStore {
     }
 
     set dragPrice(value) {
-        if (value != this._dragPrice) {
+        if (value !== this._dragPrice) {
             this._dragPrice = value;
             this._draw();
             this._emitter.emit(PriceLineStore.EVENT_PRICE_CHANGED, this._dragPrice);
@@ -285,7 +285,6 @@ export default class PriceLineStore {
 
         let top = this._locationFromPrice(quote || +this.realPrice);
 
-        // @ts-ignore
         const height = window.flutterChartElement?.clientHeight || 0;
 
         // keep line on chart even if price is off viewable area:
