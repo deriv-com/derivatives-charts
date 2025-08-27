@@ -1,7 +1,6 @@
 // This is a temporary fix. We'll need to remove the reset from the _playNewTickAnimation method
 // in the ../flutter-chart/lib/src/deriv_chart/chart/basic_chart.dart file which is the correct way to fix this.
 
-// [AI]
 type TPainterCallback = (currentTickPercent: number) => void;
 type TPainterCallbackEntry = {
     callback: TPainterCallback;
@@ -97,4 +96,3 @@ export default class Painter {
         }
     };
 }
-// [/AI]
