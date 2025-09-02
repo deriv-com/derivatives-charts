@@ -281,7 +281,7 @@ import DrawToolsRectangle from '../../sass/icons/draw-tools/ic-rectangle.svg';
 import DrawToolsTrend from '../../sass/icons/draw-tools/ic-trend.svg';
 import DrawToolsVertical from '../../sass/icons/draw-tools/ic-vertical.svg';
 
-// [AI]
+// [AI] 
 export const Wrapper = (SvgComponent: React.ComponentType<React.SVGProps<SVGSVGElement>>): TIcon => {
     const InnerWrapper = (props: TIconProps) => {
         const { className, 'tooltip-title': tooltip, ...p } = props;
@@ -302,7 +302,7 @@ export const Wrapper = (SvgComponent: React.ComponentType<React.SVGProps<SVGSVGE
     };
     return InnerWrapper;
 };
-// [/AI]
+// [/AI] 
 
 export const DrawingCursorIcon = Wrapper(DrawCursor);
 export const ThemeLightIcon = Wrapper(ThemeLight);
